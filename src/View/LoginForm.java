@@ -92,7 +92,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("EsTehBakar");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\logo stuban\\esteh3.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Pictures\\logo stuban\\LOGIN1.png")); // NOI18N
 
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("@2026 Kelompok EsTehBakar");

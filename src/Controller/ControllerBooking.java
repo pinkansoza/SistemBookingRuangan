@@ -313,31 +313,32 @@ public class ControllerBooking {
         }
     }
     
-    public void cari() {
+   public void cari() {
     // 1. Ambil keyword dari textfield cari di Form Booking
-    String keyword = frmBooking.gettxtCariKodeBooking().getText().trim();
+        String keyword = frmBooking.gettxtCariKodeBooking().getText().trim();
 
-    // 2. Validasi kalau textbox kosong, tampilkan semua data lagi
-    if (keyword.isEmpty()) {
-        JOptionPane.showMessageDialog(frmBooking, "Ketikkan kata kunci (Kode/Nama) terlebih dahulu!");
-        isiTable(); // Panggil fungsi isiTable yang sudah ada untuk refresh data
-        return;
-    }
+        // 2. Validasi kalau textbox kosong, tampilkan semua data lagi
+        if (keyword.isEmpty()) {
+            JOptionPane.showMessageDialog(frmBooking, "Ketikkan kata kunci (Kode/Nama) terlebih dahulu!");
+            isiTable(); // Panggil fungsi isiTable yang sudah ada untuk refresh data
+            return;
+        }
 
-    // 3. Cari data menggunakan DAO Booking
-    // Karena di DAO tadi kita buat dua parameter (kode, nama), kita kirim keyword yang sama ke keduanya
-    lstBo = iBooking.getAllByName(keyword, keyword);
+        // 3. Cari data menggunakan DAO Booking
+        // Karena di DAO tadi kita buat dua parameter (kode, nama), kita kirim keyword yang sama ke keduanya
+        lstBo = iBooking.getAllByName(keyword, keyword);
 
-    // 4. Jika data tidak ditemukan
-    if (lstBo.isEmpty()) {
-        JOptionPane.showMessageDialog(frmBooking, "Data booking tidak ditemukan!");
-        isiTable(); // Kembalikan ke tampilan awal jika tidak ketemu
-    } else {
-        // 5. Jika ketemu, tampilkan hasil pencarian ke tabel
-        TabelModelBooking tabelBo = new TabelModelBooking(lstBo);
-        frmBooking.getTabelData().setModel(tabelBo);
+        // 4. Jika data tidak ditemukan
+        if (lstBo.isEmpty()) {
+            JOptionPane.showMessageDialog(frmBooking, "Data booking tidak ditemukan!");
+            isiTable(); // Kembalikan ke tampilan awal jika tidak ketemu
+        } else {
+            // 5. Jika ketemu, tampilkan hasil pencarian ke tabel
+            TabelModelBooking tabelBo = new TabelModelBooking(lstBo);
+            frmBooking.getTabelData().setModel(tabelBo);
+        }
     }
 }
 
     
-}
+

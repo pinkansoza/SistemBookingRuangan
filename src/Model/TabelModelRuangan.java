@@ -25,7 +25,7 @@ public class TabelModelRuangan extends AbstractTableModel{
     }
     @Override
     public int getColumnCount() {
-        return 6;
+        return 7;
     }
     
     @Override
@@ -37,6 +37,7 @@ public class TabelModelRuangan extends AbstractTableModel{
              case 3 -> "Status";
              case 4 -> "Fasilitas";
              case 5 -> "Lokasi";
+             case 6 -> "Fakultas";
              default -> null;
          };    
     }
@@ -50,6 +51,7 @@ public class TabelModelRuangan extends AbstractTableModel{
              case 3 -> lstRu.get(rowIndex).getStatus();
              case 4 -> lstRu.get(rowIndex).getFasilitas();
              case 5 -> lstRu.get(rowIndex).getLokasi();
+             case 6 -> lstRu.get(rowIndex).getFakultas();
              default -> null;
          };
     }

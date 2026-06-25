@@ -9,12 +9,27 @@ package Model;
  * @author ASUS
  */
 public class Ruangan {
+
+    /**
+     * @return the fakultas
+     */
+    public String getFakultas() {
+        return fakultas;
+    }
+
+    /**
+     * @param fakultas the fakultas to set
+     */
+    public void setFakultas(String fakultas) {
+        this.fakultas = fakultas;
+    }
     private Integer id_ruangan;
     private String nama_ruangan;
     private String kapasitas;
     private String status;
     private String fasilitas;
     private String lokasi;
+    private String fakultas;
 
     /**
      * @return the fasilitas

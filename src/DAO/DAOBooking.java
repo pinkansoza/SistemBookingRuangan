@@ -29,7 +29,7 @@ public class DAOBooking implements IDAOBooking{
     String strUpdate = "update booking set kode_booking=?, nama_peminjam=?, nama_ruangan=?, tanggal_booking=?, tujuan=? where id_booking=?";
     String strDelete = "delete from booking where id_booking=?";
     String strDeleteAll = "DELETE FROM booking";
-    String strSearch = "select * from booking where kode_booking like ? or nama_peminjam like ?;";
+    String strSearch = "select * from booking where kode_booking like ? or tujuan like ?;";
     String strTerpakai = "select * from booking where nama_ruangan = ? and tanggal_booking = ?";
     
     public DAOBooking() throws SQLException {
@@ -181,19 +181,19 @@ public class DAOBooking implements IDAOBooking{
     }
 
     @Override
-    public List<Booking> getAllByName(String kode_booking, String nama_peminjam) {
+    public List<Booking> getAllByName(String kode_booking, String tujuan) {
         List<Booking> lstBo = new ArrayList<>();
         try {
             PreparedStatement st = con.prepareStatement(strSearch);
             st.setString(1, "%"+kode_booking+"%");
-            st.setString(2, "%" + nama_peminjam + "%");
+            st.setString(2, "%" +tujuan+ "%");
             ResultSet rs = st.executeQuery();
             
             while(rs.next()){
                 Booking bo = new Booking();
                 bo.setId_booking(rs.getInt("id_booking"));
                 bo.setKode_booking(rs.getString("kode_booking")); 
-                bo.setNama_peminjam(rs.getString("nama_peminjam")); 
+                bo.setNama_peminjam(rs.getString("nama_peminjam"));
                 bo.setNama_ruangan(rs.getString("nama_ruangan"));
                 bo.setTanggal_booking(rs.getString("tanggal_booking"));
                 bo.setTujuan(rs.getString("tujuan"));

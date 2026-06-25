@@ -50,6 +50,7 @@ public class DAORuangan implements IDAORuangan {
                 ru.setStatus(rs.getString("status"));
                 ru.setFasilitas(rs.getString("fasilitas"));
                 ru.setLokasi(rs.getString("lokasi"));
+                ru.setFakultas(rs.getString("fakultas"));
                 lstRu.add(ru);
             }
         } catch(SQLException e) {

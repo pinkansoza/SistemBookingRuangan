@@ -25,7 +25,7 @@ public interface IDAOBooking {
     //delete all data
     public void deleteAll();
     //SEARCH DATA
-    public List<Booking> getAllByName(String kode_booking, String nama_peminjam);
+    public List<Booking> getAllByName(String kode_booking, String tujuan);
     // cek ruangan dipakai atau tidak
     public boolean isTerpakai(String ruanganTerpilih, String tglInput);
 }
